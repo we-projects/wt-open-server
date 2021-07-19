@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/gay_server.dir/src/server.cpp.o -o ../bin/gay_server 

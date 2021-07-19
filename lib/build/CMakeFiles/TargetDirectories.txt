@@ -1,3 +1,0 @@
-/home/lixiaoxing/文档/weProject/wt-open-server/lib/build/CMakeFiles/rebuild_cache.dir
-/home/lixiaoxing/文档/weProject/wt-open-server/lib/build/CMakeFiles/edit_cache.dir
-/home/lixiaoxing/文档/weProject/wt-open-server/lib/build/CMakeFiles/gay_lib.dir

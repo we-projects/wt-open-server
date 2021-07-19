@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../bin/libgay_lib.a CMakeFiles/gay_lib.dir/src/log_frame/log_manager.cpp.o CMakeFiles/gay_lib.dir/src/log_frame/log_frame_main.cpp.o
-/usr/bin/ranlib ../bin/libgay_lib.a
