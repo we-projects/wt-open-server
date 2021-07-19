@@ -12,7 +12,7 @@ int main() {
 
     /* everything todo.*/
 
-    /* we toto ...*/
+    std::cout << "hello world " << std::endl;
 
     return 0;
 }

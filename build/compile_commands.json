@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/lixiaoxing/文档/weProject/wt-open-server/build",
+  "command": "/usr/bin/c++  -I/home/lixiaoxing/文档/weProject/wt-open-server/build/../include -std=gnu++11 -o CMakeFiles/gay_server.dir/src/server.cpp.o -c /home/lixiaoxing/文档/weProject/wt-open-server/src/server.cpp",
+  "file": "/home/lixiaoxing/文档/weProject/wt-open-server/src/server.cpp"
+}
+]

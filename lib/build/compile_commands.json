@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/lixiaoxing/文档/weProject/wt-open-server/lib/build",
+  "command": "/usr/bin/c++  -I/home/lixiaoxing/文档/weProject/wt-open-server/lib/build/../include -I/home/lixiaoxing/文档/weProject/wt-open-server/lib/build/../include/log_frame   -g -Wall -std=c++11 -l pthread -std=gnu++11 -o CMakeFiles/gay_lib.dir/src/log_frame/log_manager.cpp.o -c /home/lixiaoxing/文档/weProject/wt-open-server/lib/src/log_frame/log_manager.cpp",
+  "file": "/home/lixiaoxing/文档/weProject/wt-open-server/lib/src/log_frame/log_manager.cpp"
+},
+{
+  "directory": "/home/lixiaoxing/文档/weProject/wt-open-server/lib/build",
+  "command": "/usr/bin/c++  -I/home/lixiaoxing/文档/weProject/wt-open-server/lib/build/../include -I/home/lixiaoxing/文档/weProject/wt-open-server/lib/build/../include/log_frame   -g -Wall -std=c++11 -l pthread -std=gnu++11 -o CMakeFiles/gay_lib.dir/src/log_frame/log_frame_main.cpp.o -c /home/lixiaoxing/文档/weProject/wt-open-server/lib/src/log_frame/log_frame_main.cpp",
+  "file": "/home/lixiaoxing/文档/weProject/wt-open-server/lib/src/log_frame/log_frame_main.cpp"
+}
+]
