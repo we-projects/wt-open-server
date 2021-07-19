@@ -11,16 +11,33 @@
 
 #include <iostream>
 #include <string>
+#include <map>
 
 namespace gay_lib_log {
 
+    class log_manager;
+    typedef int(log_manager::*log_handle)(std::string);
+
+    enum log_type {
+        ltDebug, 
+        ltHint, 
+        ltWarning, 
+        ltError
+    };
+
     class log_manager {
     private: 
+        std::map<gay_lib_log::log_type, gay_lib_log::log_handle> log_handle_list;
+
+        int Debug_log_handle(std::string);
+        int Hint_log_handle(std::string);
+        int Warning_log_handle(std::string);
+        int Error_log_handle(std::string);
     public: 
         log_manager();
         ~log_manager();
     public:
-        int gay_log(std::string log_str, int type);
+        int gay_log(std::string log_str, gay_lib_log::log_type type);
     };
     
 }

@@ -5,14 +5,20 @@ project(gay_server)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+
+LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib/bin)
 
 include_directories(
-    ${CMAKE_BINARY_DIR}/../include
+    ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/lib/include/log_frame
 )
 
-add_executable(gay_server
-    src/server.cpp
-)
+AUX_SOURCE_DIRECTORY(. DIR_SOURCE)
+AUX_SOURCE_DIRECTORY(src DIR_SOURCE)
 
+add_definitions("-g -Wall")
 
+ADD_EXECUTABLE(gay_server ${DIR_SOURCE})
+
+TARGET_LINK_LIBRARIES(gay_server libgay_lib.a)

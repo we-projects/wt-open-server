@@ -8,4 +8,10 @@
 
 #ifndef _SERVER_H
 #define _SERVER_H
+
+#include <iostream>
+#include <string>
+
+#include "log_manager.h"
+
 #endif

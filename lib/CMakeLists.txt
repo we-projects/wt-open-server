@@ -11,9 +11,8 @@ include_directories(
     ${CMAKE_BINARY_DIR}/../include/log_frame
 )
 
-add_definitions("-g -Wall -std=c++11 -l pthread")
+add_definitions("-g -Wall")
 
 add_library(gay_lib STATIC
     src/log_frame/log_manager.cpp
-    src/log_frame/log_frame_main.cpp
 )
