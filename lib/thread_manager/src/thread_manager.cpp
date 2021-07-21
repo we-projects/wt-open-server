@@ -1,5 +1,5 @@
 /*
-	* File     : /home/sunowsir/Code/1.GitHub/1.my_project/wt-open-server/lib/thread_manager/include/thread_manager.h
+	* File     : thread_manager.h
 	* Author   : sunowsir
 	* Mail     : sunowsir@163.com
 	* Github   : github.com/sunowsir
