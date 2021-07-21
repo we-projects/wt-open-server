@@ -47,3 +47,4 @@ gay_lib_log::log_manager::~log_manager() {
 int gay_lib_log::log_manager::gay_log(std::string log_str, gay_lib_log::log_type type) {
     return ((this->*this->log_handle_list[type])(log_str));
 }
+
