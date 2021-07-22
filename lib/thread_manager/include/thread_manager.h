@@ -30,11 +30,16 @@ namespace we_thread_mgr {
     template <class T, class C>
     class task_item {
     private:
+        /* 被执行方法的所属对象*/
         C task_class;
+
+        /* 被执行方法的地址*/
         T task_func;
     public: 
-        task_item();
+        task_item(C task_c, T task_f);
         ~task_item();
+    public: 
+        void task_run();
     };
 
     /*

@@ -11,13 +11,18 @@
 /* task_item */
 
 template <class T, class C>
-we_thread_mgr::task_item<T, C>::task_item() {
-    
-}
+we_thread_mgr::task_item<T, C>::task_item(C task_c, T task_f) : 
+                                task_class(task_c), 
+                                task_func(task_f){}
 
 template <class T, class C>
 we_thread_mgr::task_item<T, C>::~task_item() {
     
+}
+
+template <class T, class C>
+void we_thread_mgr::task_item<T, C>::task_run() {
+    this->task_class->*this->task_func();
 }
 
 /* task_queue */
