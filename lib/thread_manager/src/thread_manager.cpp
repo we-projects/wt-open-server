@@ -10,41 +10,49 @@
 
 /* task_item */
 
-we_thread_mgr::task_item::task_item() {
+template <class T, class C>
+we_thread_mgr::task_item<T, C>::task_item() {
     
 }
 
-we_thread_mgr::task_item::~task_item() {
+template <class T, class C>
+we_thread_mgr::task_item<T, C>::~task_item() {
     
 }
 
 /* task_queue */
 
-we_thread_mgr::task_queue::task_queue() {
+template <class T, class C>
+we_thread_mgr::task_queue<T, C>::task_queue() {
     
 }
 
-we_thread_mgr::task_queue::~task_queue() {
+template <class T, class C>
+we_thread_mgr::task_queue<T, C>::~task_queue() {
     
 }
 
 /* thread_item */
 
-we_thread_mgr::thread_item::thread_item() {
+template <class T, class C>
+we_thread_mgr::thread_item<T, C>::thread_item() {
     
 }
 
-we_thread_mgr::thread_item::~thread_item() {
+template <class T, class C>
+we_thread_mgr::thread_item<T, C>::~thread_item() {
     
 }
 
 /* thread_manager */
 
-we_thread_mgr::thread_manager::thread_manager() {
+template <class T, class C>
+we_thread_mgr::thread_manager<T, C>::thread_manager() {
     
 }
 
-we_thread_mgr::thread_manager::~thread_manager() {
+template <class T, class C>
+we_thread_mgr::thread_manager<T, C>::~thread_manager() {
     
 }
 
