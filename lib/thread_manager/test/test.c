@@ -37,9 +37,9 @@ main(int argc, char *argv[])
             printf("Child writing %s to efd\n", argv[j]);
             u = strtoull(argv[j], NULL, 0);
                     /* strtoull() allows various bases */
-            s = write(efd, &u, sizeof(uint64_t));
-            if (s != sizeof(uint64_t))
-                handle_error("write");
+            // s = write(efd, &u, sizeof(uint64_t));
+            // if (s != sizeof(uint64_t))
+            //     handle_error("write");
         }
         printf("Child completed write loop\n");
 

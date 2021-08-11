@@ -43,8 +43,6 @@ namespace we_thread_mgr {
         void task_run();
     };
 
-
-
     /*
      * 线程信息
      * 保存线程的任务队列
@@ -53,30 +51,31 @@ namespace we_thread_mgr {
     template <class T, class C>
     class thread_item {
     private:
-        /*
-         * `eventfd`
-         * 信号约定：
-         * 1. 开始执行或执行下一个任务
-         * 2. 退出线程，放弃所有任务
-         * */
-        int efd;
-
         /* 线程 */
         pthread_t thread;
 
         std::queue<we_thread_mgr::task_item<T, C>> 
             *task_info_queue;
     private: 
-        static void* local_call_thread_working(void *);
+        static void* thread_working_only(void *);
     public: 
         thread_item();
         ~thread_item();
     public: 
         /*
          * 线程启动方法
-         * 返回 `eventfd`
+         * 0: success
          * */
         int run();
+
+        /*
+         * 增加任务到队列中
+         * 参数：
+         * 方法，对象
+         * 返回值: 
+         * 0: success
+         * */
+        int push_task(T, C, int);
     };
     
 

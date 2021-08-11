@@ -11,7 +11,7 @@ LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib/bin)
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
-    ${PROJECT_SOURCE_DIR}/lib/g_log_lib/include
+    ${PROJECT_SOURCE_DIR}/lib/g_log/include
 )
 
 AUX_SOURCE_DIRECTORY(. DIR_SOURCE)
