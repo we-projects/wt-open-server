@@ -39,34 +39,11 @@ namespace we_thread_mgr {
         task_item(C task_c, T task_f);
         ~task_item();
     public: 
+        /* 执行方法 */
         void task_run();
     };
 
-    /*
-     * 任务队列
-     * 保存一个任务队列以及 eventfd 文件描述符
-     * */
-    template <class T, class C>
-    class task_queue {
-    private: 
-        int efd;
-        std::queue<we_thread_mgr::task_item<T, C>> task_info_queue;
-    public: 
-        task_queue();
-        ~task_queue();
-    };
 
-
-    /*
-     * 线程状态
-     * */
-    enum thread_status {
-        /* 可用 */
-        ts_available, 
-
-        /* 已分配*/
-        ts_assigned, 
-    };
 
     /*
      * 线程信息
@@ -76,13 +53,32 @@ namespace we_thread_mgr {
     template <class T, class C>
     class thread_item {
     private:
+        /*
+         * `eventfd`
+         * 信号约定：
+         * 1. 开始执行或执行下一个任务
+         * 2. 退出线程，放弃所有任务
+         * */
+        int efd;
+
+        /* 线程 */
         pthread_t thread;
-        we_thread_mgr::task_queue<T, C> t_queue;
-        we_thread_mgr::thread_status status;
+
+        std::queue<we_thread_mgr::task_item<T, C>> 
+            *task_info_queue;
+    private: 
+        static void* local_call_thread_working(void *);
     public: 
         thread_item();
         ~thread_item();
+    public: 
+        /*
+         * 线程启动方法
+         * 返回 `eventfd`
+         * */
+        int run();
     };
+    
 
 
     /*
@@ -95,11 +91,12 @@ namespace we_thread_mgr {
     template <class T, class C>
     class thread_manager {
     private:
-        std::map<we_thread_mgr::thread_status, 
-                 we_thread_mgr::thread_item<T, C>> thread_pool;
+        std::map<int, 
+            we_thread_mgr::thread_item<T, C>> *thread_pool;
     public: 
         thread_manager();
         ~thread_manager();
+    public: 
     };
 
 }

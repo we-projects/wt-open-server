@@ -1,5 +1,5 @@
-# gay_family_project
-> gay family 独立项目
+# wt-open-server
+> we team open server for learn only.
 
 * 编译
     > 每个存在`CMakeLists.txt`的目录都需要如下方式独立编译成可执行文件或库文件
