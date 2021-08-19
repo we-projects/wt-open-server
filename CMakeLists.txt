@@ -12,6 +12,7 @@ LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib/bin)
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
     ${PROJECT_SOURCE_DIR}/lib/g_log/include
+    ${PROJECT_SOURCE_DIR}/lib/expre_to_json/include
 )
 
 AUX_SOURCE_DIRECTORY(. DIR_SOURCE)
@@ -21,4 +22,7 @@ add_definitions("-g -Wall")
 
 ADD_EXECUTABLE(gay_server ${DIR_SOURCE})
 
-TARGET_LINK_LIBRARIES(gay_server libg_log.a)
+TARGET_LINK_LIBRARIES(gay_server 
+    libg_log.a 
+    libexpre_parser.a
+)

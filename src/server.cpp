@@ -18,5 +18,9 @@ int main() {
 
     g_log->gay_log("this is a Debug type log.", gay_lib_log::log_type::ltDebug);
 
+    std::string test;
+    exp_parser::parser parser(test);
+    parser.parsing();
+
     return 0;
 }

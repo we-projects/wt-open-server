@@ -13,5 +13,6 @@
 #include <string>
 
 #include "log_manager.h"
+#include "parser.h"
 
 #endif
