@@ -16,6 +16,14 @@ exp_parser::parser::~parser() {
     delete this->expression;
 }
 
+void test(configor::json &t_json) {
+    t_json["object"] = {
+        { "key", "value" },
+        { "key2", "value2" },
+    };
+
+}
+
 bool exp_parser::parser::parsing() {
     this->exp_json = {
         { "nul", nullptr },
@@ -24,18 +32,15 @@ bool exp_parser::parser::parsing() {
         { "boolean", false },
         { "string", "中文测试" },
         { "array", { 1, 2, true, 1.4 } },
-        { "object", {
-                { "key", "value" },
-                { "key2", "value2" },
-            },
-        }
     };
+
+    test(this->exp_json);
+    test(this->exp_json["object"]);
 
     // 序列化为字符串
     std::string json_str = this->exp_json.dump();
     // 美化输出，使用 4 个空格对输出进行格式化
     std::string pretty_str = this->exp_json.dump(4, ' ');
-
     std::cout << pretty_str << std::endl;
 
     return true;
