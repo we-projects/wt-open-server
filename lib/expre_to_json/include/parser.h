@@ -12,19 +12,22 @@
 #include <iostream>
 #include <string>
 
+/* json lib import from: https://github.com/Nomango/configor */
 #include "configor/json.hpp"
 
 namespace exp_parser {
 
     class parser {
     private: 
-        std::string *expression;
+        std::string expr;
         configor::json exp_json;
+    private: 
+        bool json_parse();
     public:
-        parser(std::string);
+        parser(std::string = std::string(""));
         ~parser();
 
-        bool parsing();
+        bool parsing(std::string = std::string(""));
     };
     
 };
