@@ -8,13 +8,14 @@
 
 #include "parser.h"
 
-exp_parser::parser::parser(std::string expre_str) {
-    this->expression = new std::string(expre_str);
+bool exp_parser::parser::json_parse() {
+    
 }
 
-exp_parser::parser::~parser() {
-    delete this->expression;
-}
+exp_parser::parser::parser(std::string expr_init) : 
+    expr(expr_init) {}
+
+exp_parser::parser::~parser() {}
 
 void test(configor::json &t_json) {
     t_json["object"] = {
@@ -24,18 +25,15 @@ void test(configor::json &t_json) {
 
 }
 
-bool exp_parser::parser::parsing() {
-    this->exp_json = {
-        { "nul", nullptr },
-        { "number", 1 },
-        { "float", 1.3 },
-        { "boolean", false },
-        { "string", "中文测试" },
-        { "array", { 1, 2, true, 1.4 } },
-    };
+bool exp_parser::parser::parsing(std::string expre_str) {
+    if (!expre_str.empty())
+        this->expr = expre_str;
 
-    test(this->exp_json);
-    test(this->exp_json["object"]);
+    if (this->expr.empty())
+        std::cerr << std::string("[exp_parser::parser::parsing] expr is empty.") << std::endl;
+
+    this->exp_json["temp"] = this->expr;
+    this->json_parse();
 
     // 序列化为字符串
     std::string json_str = this->exp_json.dump();
