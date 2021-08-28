@@ -17,14 +17,6 @@ exp_parser::parser::parser(std::string expr_init) :
 
 exp_parser::parser::~parser() {}
 
-void test(configor::json &t_json) {
-    t_json["object"] = {
-        { "key", "value" },
-        { "key2", "value2" },
-    };
-
-}
-
 bool exp_parser::parser::parsing(std::string expre_str) {
     if (!expre_str.empty())
         this->expr = expre_str;
